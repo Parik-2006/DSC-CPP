@@ -1,0 +1,6 @@
+Before function: 
+5
+10
+15
+After function: 
+15

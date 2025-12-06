@@ -1,0 +1,1 @@
+// Find aⁿ using fast recursion (log N).
