@@ -30,7 +30,9 @@ Node *buildTree(Node *root){
     root->right = buildTree(root->right);
 }
 
-Node *levelorder(Node *root){
+void levelorder(Node *root){
+    if(root == NULL)
+        return;
     queue <Node*> q;
     q.push(root);
     q.push(NULL);
@@ -65,14 +67,48 @@ the queue becomes empty, ensuring that nodes are visited and printed in breadth-
 with each level of the tree displayed on a separate line.
 #endif
 
-Node *reverseLevelOrder(Node *root){
+void reverseLevelOrder(Node *root){
+    if(root == NULL)
+        return;
+    queue <Node*> q;
+    stack <Node*> s;
 
+    q.push(root);
+    q.push(NULL);
+    while(!q.empty()){
+        Node *ptr = q.front();
+        q.pop();
+
+        if(ptr == NULL){
+            s.push(NULL);
+        if(!q.empty())
+            q.push(NULL);
+        } else {
+            s.push(ptr);
+
+            if(ptr->right)
+                q.push(ptr->right);
+            if(ptr->left)
+                q.push(ptr->left);
+        }
+
+    }
+
+    while(!s.empty()){
+        Node *ptr = s.top();
+        s.pop();
+
+        if(ptr == NULL)
+            cout << endl;
+        else
+            cout << ptr->data << " ";
+    }
 }
 
 int main(){
     Node *root = NULL;
     root = buildTree(root);
     cout << "Level Order Traversal: " << endl;
-    root = levelorder(root);
+    levelorder(root);
     return 0;
 }
