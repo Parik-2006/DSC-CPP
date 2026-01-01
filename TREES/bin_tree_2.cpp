@@ -105,9 +105,52 @@ void reverseLevelOrder(Node *root){
     }
 }
 
+void buildFromLevelOrder(Node* &root){
+    queue <Node*> q;
+    cout << "Enter Data for Root Node: ";
+    int rootData;
+    cin >> rootData;
+    root = new Node(rootData);
+    q.push(root);
+    while(!q.empty()){
+        Node *ptr = q.front();
+        q.pop();
+
+        // Left Node
+        cout << "Enter Left Node for " << ptr->data <<": ";
+        int leftData;
+        cin >> leftData;
+
+        if(leftData!= -1){
+            ptr->left = new Node(leftData);
+            q.push(ptr->left);
+        }
+
+        // Right Node
+        cout << "Enter Right Node for " << ptr->data <<": ";
+        int rightData;
+        cin >> rightData;
+
+        if(rightData!= -1){
+            ptr->right = new Node(rightData);
+            q.push(ptr->right);
+        }
+    }
+}
+
+#if 0
+In C++, when you pass `root` to a function like `buildFromLevelOrder(Node *root)`, the function receives **only a copy of the 
+pointer**, not the original pointer from `main()`. So when the function creates a new node and assigns it to `root`, it changes 
+**only that local copy**, and the original `root` in `main()` stays `NULL`. By adding the ampersand (`Node* &root`), you are telling 
+C++ to pass the **actual pointer itself**, not a copy of it. This means any change made to `root` inside the function (like assigning 
+`new Node`) directly updates `root` in `main()`, allowing the tree to exist outside the function and be printed correctly by 
+`levelorder()`.
+#endif
+
 int main(){
     Node *root = NULL;
-    root = buildTree(root);
+    // root = buildTree(root);
+    buildFromLevelOrder(root);
     cout << "Level Order Traversal: " << endl;
     levelorder(root);
     return 0;
