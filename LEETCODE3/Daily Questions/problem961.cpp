@@ -18,6 +18,7 @@ public:
         return nums[0];
     }
 };
+// time complexity = 0(1)
 
 int main(){
     return 0;
