@@ -37,6 +37,29 @@ public:
     }
 };
 
+
+/*
+    TEST CASE 1: Identical Trees
+    Tree P: [1, 2, 3]  |  Tree Q: [1, 2, 3]
+    - Roots match (1 == 1).
+    - Left children match (2 == 2).
+    - Right children match (3 == 3).
+    Expected Result: true
+
+    TEST CASE 2: Different Values
+    Tree P: [1, 2, 1]  |  Tree Q: [1, 1, 2]
+    - Roots match (1 == 1).
+    - Left children: 2 vs 1 -> MISMATCH!
+    Expected Result: false
+
+    TEST CASE 3: Different Structure (The "Lopsided" Case)
+    Tree P: [1, 2]     |  Tree Q: [1, null, 2]
+    - Tree P has a left child '2'.
+    - Tree Q has a right child '2'.
+    - When checking P->left vs Q->left, one is '2' and one is NULL.
+    Expected Result: false
+*/
+
 /* 
    CONCEPT: THE SYNCHRONIZED WALK
    ------------------------------
