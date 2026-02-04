@@ -85,3 +85,34 @@ This approach reduces the time complexity from O(n) to O(log n).
 The space complexity is O(1) because it uses only constant extra memory.
 #endif
 
+#if 0
+Dry Run of Iterative Fast Exponentiation for x = 3 and n = 5
+
+Initial values:
+x = 3, n = 5, res = 1
+
+Iteration 1:
+n = 5 (binary 101), n is odd
+Since n & 1 is true, res is multiplied by x
+res = 1 × 3 = 3
+x is squared: x = 3 × 3 = 9
+n is right shifted: n = 5 >> 1 = 2
+
+Iteration 2:
+n = 2 (binary 010), n is even
+res remains unchanged
+x is squared: x = 9 × 9 = 81
+n is right shifted: n = 2 >> 1 = 1
+
+Iteration 3:
+n = 1 (binary 001), n is odd
+Since n & 1 is true, res is multiplied by x
+res = 3 × 81 = 243
+x is squared: x = 81 × 81 = 6561
+n is right shifted: n = 1 >> 1 = 0
+
+Loop terminates when n becomes 0
+
+Final result:
+res = 243, which is equal to 3 raised to the power 5
+#endif
