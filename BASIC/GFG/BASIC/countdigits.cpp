@@ -10,6 +10,11 @@ int countdigits(int n){
     return count;
 }
 
+int countdigits1(int n){
+    if(n<=0)
+        return floor(log10(n) + 1);
+} // TC - O(1), SC - 0(1)
+
 bool palindrome(int n){
     int temp = n, rev = 0, ld;
     while(temp!=0){
