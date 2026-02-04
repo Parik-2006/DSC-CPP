@@ -11,7 +11,7 @@ int countdigits(int n){
 }
 
 int countdigits1(int n){
-    if(n<=0)
+    if(n>0)
         return floor(log10(n) + 1);
 } // TC - O(1), SC - 0(1)
 
