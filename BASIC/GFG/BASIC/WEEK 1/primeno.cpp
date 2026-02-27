@@ -53,4 +53,8 @@ than a basic prime-checking approach.
 
 The time complexity of this algorithm is O(sqrt(n)),
 and the space complexity is O(1).
+
+n = 251,
+n == 1, n == 2, n == 3 ... no
+n%2 == 0, n%3 == 0, 
 #endif

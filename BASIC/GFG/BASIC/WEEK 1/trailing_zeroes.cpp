@@ -45,4 +45,10 @@ Space Complexity:
 The algorithm uses only a constant amount of extra memory for variables.
 No additional space proportional to the input size is required.
 Hence, the space complexity is O(1).
+
+n = 251, res =0;
+for(5 <= 251), res = 0 + (251/5), 0 + 50, res = 50;
+for(25 <= 251), res = 50 + (251/25), 50 + 10, res = 60;
+for(125 <= 251), res = 60 + (251/125), 60 + 2, res = 62;
+for(750 <= 251), return 62; 
 #endif
