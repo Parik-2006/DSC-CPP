@@ -84,3 +84,37 @@ Remaining values marked as true are prime numbers and are printed.
 Final prime numbers from 2 to 20 are:
 2, 3, 5, 7, 11, 13, 17, 19.
 #endif
+
+// class Solution {
+//   public:
+//     vector<int> sieve(int n) {
+//         // code here
+//         vector<bool> array(n+1, true);
+//         vector<int> primes;
+//         if(n>=1)
+//             array[0] = false;
+//             array[1] = false;
+        
+//         for(int i = 2; i*i<=n; i++){
+//             if(array[i])
+//                 for(int j = i*i; j<=n; j+=i)
+//                     array[j] = false;
+//         }
+        
+//         for(int i = 2; i<=n; i++){
+//             if(array[i])
+//                 primes.push_back(i);
+//         }
+//     return primes;
+//     }
+// };
+
+#if 0
+The sieve algorithm has two loops, but its time complexity is not O(n²) because the loops do not run fully n times each. 
+The outer loop runs only up to the square root of n, not up to n. That already reduces a large amount of work. Inside the outer loop, 
+the inner loop runs only for multiples of the current number, starting from its square. For a given value i, the inner loop runs 
+roughly n divided by i times. So the total work done is approximately n/2 + n/3 + n/5 + n/7 and so on, considering only prime numbers. 
+This series grows very slowly and is mathematically known to result in O(n log log n), not O(n²). The reason it stays efficient is 
+that each number is marked only by its prime factors, not by every number. Therefore, even though there are two loops, the total 
+number of operations increases much slower than n².
+#endif

@@ -11,8 +11,8 @@ bool primeno(int n){
     for(int i = 5; i<= sqrt(n); i+=6){ // i*i <= n ... uu baribodu
         if(n % i == 0 || n % (i+2) == 0)
             return false;
-    return true;
     }
+    return true;
 }
 
 int main(){
@@ -56,5 +56,41 @@ and the space complexity is O(1).
 
 n = 251,
 n == 1, n == 2, n == 3 ... no
-n%2 == 0, n%3 == 0, 
+n%2 == 0, n%3 == 0 .... no
+for(5 <= 15, 5+6), 251%5 == 0, 251 % 7 == 0 .. no,
+for(11 <= 15, 11+6), 251%11 == 0, 251%13 == 0 .. no, 
+for(17 <= 15).. comes out of loop... return true ..
+so 251 is a prime no
 #endif
+
+
+// #include <iostream>
+// using namespace std;
+
+// class Solution{
+// public:
+//     bool isPrime(int N){
+//         if(N == 1)
+//             return false;
+//         if(N == 2 || N == 3)
+//             return true;
+//         if(N%2 == 0|| N%3 == 0)
+//             return false;
+//         for(int i = 5; i*i <=N; i+=6){
+//             if(N%i ==0 || N%(i+2) == 0)
+//                 return false;
+//         }
+//         return true;
+//     }
+// };
+
+// int main(){
+//     int N;
+//     cin >> N;
+//     Solution obj;
+//     if(obj.isPrime(N))
+//         cout << "True";
+//     else
+//         cout << "False";
+// }
+// main function idre terminal alli
