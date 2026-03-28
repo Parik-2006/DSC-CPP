@@ -71,3 +71,18 @@ public:
 //
 // Hence, the algorithm mimics a voting and cancellation process, which is
 // why it is called the Boyer–Moore Voting Algorithm.
+
+// Input: nums = [3,2,3]
+// Output: 3
+
+// Input: nums = [2,2,1,1,1,2,2]
+// Output: 2
+
+// Input: nums = [1]
+// Output: 1
+
+// Input: nums = [5,5,5,2,2]
+// Output: 5
+
+// Input: nums = [9,9,9,9,1,2,3]
+// Output: 9
